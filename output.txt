@@ -1,0 +1,14 @@
+lex : Found Identifier : ab
+Registered new variable-> ab : 5.000000
+lex : Found Identifier : bc
+Registered new variable-> bc : 6.000000
+lex : Found Identifier : xy
+lex : Found Identifier : yz
+lex : Found Identifier : lal
+Registered new variable-> lal : 10.000000
+Block Completed
+Successful created function: er_jogfol 
+
+tahole
+  lal holo purno 10 #
+shesh

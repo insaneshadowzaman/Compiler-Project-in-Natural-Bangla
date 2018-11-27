@@ -1,0 +1,62 @@
+ekta holo purno 1 #
+araita holo vognangsho 2.5 #
+
+// This kjdsflkj
+i die 10 theke 20 ghurlam
+tahole
+    pachta holo purno 5 #
+
+shesh
+
+jodi 5 theke 6 boro ebong (6 theke 7 boro na) hoe
+tahole
+// block
+shesh
+
+// This kjdsflkj
+
+5 er_fact# // This kjdsflkj
+
+ekta holo 1 #
+gunful holo vognangsho #
+
+jodi ekta theke araita boro hoe
+tahole
+    tinta holo purno 3 #
+    gunful holo araita gun tinta #
+shesh
+
+jodi ekta theke araita choto hoe
+tahole
+    
+    tinta holo 3 #
+    gunful holo araita gun tinta #
+
+shesh
+
+nahole_jodi araita theke ekta boro hoe
+tahole
+    charta holo purno 4 #
+    gunful holo araita gun charta #
+shesh
+
+nahole
+tahole
+    shunnota holo 0 #
+shesh
+
+abc holo purno 5 #
+
+dhori a
+  5 hole
+  tahole
+    def holo purno 10 #
+  shesh
+  6 hole
+  tahole
+    jodi def theke abc boro hoe
+    tahole
+      ghi holo purno 15 #
+    shesh
+  shesh
+shesh
