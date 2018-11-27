@@ -1,8 +1,104 @@
-ab holo purno 5 #
-bc holo purno 6 #
+// Declaration with no value
+abc holo purno #
+def holo vognangsho #
 
-xy ar yz er_jogfol 
+// Declaration with value
+a holo purno 5 #
+b holo vognangsho 10.1 #
 
+// Conditions
+jodi a theke b boro hoe
 tahole
-  lal holo purno 10 #
+    c holo purno a jog b #
+    // And other statements
+shesh
+
+// Assignments
+a holo 10 #
+a holo 15 jog 18 #
+a holo 15 theke 18 boro #  // a will get the value 1(true)
+
+
+// Conditions with complex boolean expressions
+jodi a theke b boro ebong 5 theke 6 boro na hoe
+tahole
+    // Statements
+shesh
+
+// If with else
+jodi 5 theke 6 boro hoe
+tahole
+    // Statements
+shesh
+nahole
+tahole
+    // Statements
+shesh
+
+// If with else if and else
+jodi 5 theke 6 boro hoe
+tahole
+    // Statements
+shesh
+nahole_jodi 5 theke 6 choto hoe
+tahole
+    // Statements
+shesh
+nahole
+tahole
+    // Statements
+shesh
+
+// Nested if else   ( No dangling else error :) )
+jodi 5 theke 10 boro hoe
+tahole
+    jodi 10 theke a choto hoe
+    tahole
+        // Statements
+    shesh
+    nahole
+    tahole
+        // Statements
+    shesh
+nahole
+tahole
+    // Statements
+shesh
+
+
+// Operators
+a jog b #
+a biog b #
+a gun b #
+a vag b #
+
+// Advanced Operators
+a upore b #
+a er_sine #
+a er_cos #
+a er_tan #
+a er_lon #
+
+
+// Loop
+pachta holo purno #
+i die 10 theke 20 ghurlam
+tahole
+    pachta holo 5 #
+shesh
+
+// Switch
+a holo 6 #
+dhori a
+  5 hole
+  tahole
+    def holo purno 10 #
+  shesh
+  6 hole
+  tahole
+    jodi def theke abc boro hoe  // inserted if in switch, if you're wondering its possible in my language :)
+    tahole
+      ghi holo purno 15 #
+    shesh
+  shesh
 shesh

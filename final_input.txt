@@ -1,52 +1,94 @@
-ekta holo purno 1 #
-araita holo vognangsho 2.5 #
+// Declaration with no value
+abc holo purno #
+def holo vognangsho #
 
-// This kjdsflkj
-i die 10 theke 20 ghurlam
+// Declaration with value
+a holo purno 5 #
+b holo vognangsho 10.1 #
+
+// Conditions
+jodi a theke b boro hoe
 tahole
-    pachta holo purno 5 #
-
+    c holo purno a jog b #
+    // And other statements
 shesh
 
-jodi 5 theke 6 boro ebong (6 theke 7 boro na) hoe
+// Assignments
+a holo 10 #
+a holo 15 jog 18 #
+a holo 15 theke 18 boro #  // a will get the value 1(true)
+
+
+// Conditions with complex boolean expressions
+jodi a theke b boro ebong 5 theke 6 boro na hoe
 tahole
-// block
+    // Statements
 shesh
 
-// This kjdsflkj
-
-5 er_fact# // This kjdsflkj
-
-ekta holo 1 #
-gunful holo vognangsho #
-
-jodi ekta theke araita boro hoe
+// If with else
+jodi 5 theke 6 boro hoe
 tahole
-    tinta holo purno 3 #
-    gunful holo araita gun tinta #
+    // Statements
 shesh
-
-jodi ekta theke araita choto hoe
-tahole
-    
-    tinta holo 3 #
-    gunful holo araita gun tinta #
-
-shesh
-
-nahole_jodi araita theke ekta boro hoe
-tahole
-    charta holo purno 4 #
-    gunful holo araita gun charta #
-shesh
-
 nahole
 tahole
-    shunnota holo 0 #
+    // Statements
 shesh
 
-abc holo purno 5 #
+// If with else if and else
+jodi 5 theke 6 boro hoe
+tahole
+    // Statements
+shesh
+nahole_jodi 5 theke 6 choto hoe
+tahole
+    // Statements
+shesh
+nahole
+tahole
+    // Statements
+shesh
 
+// Nested if else   ( No dangling else error :) )
+jodi 5 theke 10 boro hoe
+tahole
+    jodi 10 theke a choto hoe
+    tahole
+        // Statements
+    shesh
+    nahole
+    tahole
+        // Statements
+    shesh
+nahole
+tahole
+    // Statements
+shesh
+
+
+// Operators
+a jog b #
+a biog b #
+a gun b #
+a vag b #
+
+// Advanced Operators
+a upore b #
+a er_sine #
+a er_cos #
+a er_tan #
+a er_lon #
+
+
+// Loop
+pachta holo purno #
+i die 10 theke 20 ghurlam
+tahole
+    pachta holo 5 #
+shesh
+
+// Switch
+a holo 6 #
 dhori a
   5 hole
   tahole
@@ -54,7 +96,7 @@ dhori a
   shesh
   6 hole
   tahole
-    jodi def theke abc boro hoe
+    jodi def theke abc boro hoe  // inserted if in switch, if you're wondering its possible in my language :)
     tahole
       ghi holo purno 15 #
     shesh
