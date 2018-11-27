@@ -92,7 +92,7 @@ a holo 6 #
 dhori a
   5 hole
   tahole
-    def holo purno 10 #
+    xyz holo purno 10 #
   shesh
   6 hole
   tahole
@@ -102,3 +102,12 @@ dhori a
     shesh
   shesh
 shesh
+
+
+// And now the error part
+
+// declared previously
+abc holo purno 10 #
+
+// Undeclared variable
+cba holo 5 #

@@ -1,95 +1,54 @@
-lex : Found Identifier : abc
-Registered new variable-> abc : 0.000000
-lex : Found Identifier : def
-Registered new variable-> def : 0.000000
-lex : Found Identifier : a
-Registered new variable-> a : 5.000000
-lex : Found Identifier : b
-Registered new variable-> b : 10.100000
-lex : Found if
-lex : Found Identifier : a
-lex : Found Identifier : b
-bison : bool_expr boro: 1
-lex : Found Identifier : c
-lex : Found Identifier : a
-lex : Found Identifier : b
-Registered new variable-> c : 15.100000
-Block Completed
-lex : Found Identifier : a
+Declared variable-> abc : 0.000000
+Declared variable-> def : 0.000000
+Declared variable-> a : 5
+Declared variable-> b : 10.1
+bool_expr boro: 1
+Declared variable-> c : 15.1
+Block Successfully Parsed
+Expression in if is true
+Updated variable-> a : 10
+Updated variable-> a : 33
+bool_expr boro: 0
+bool_expr boro: 1
+bool_expr ebong: 0
+bool_expr na: 1
+Block Successfully Parsed
+Expression in if is true
+bool_expr boro: 1
+Block Successfully Parsed
+Block Successfully Parsed
 Expression in if is true
-Updated variable-> a : 10	
-lex : Found Identifier : a
-Updated variable-> a : 33	
-lex : Found if
-lex : Found Identifier : a
-lex : Found Identifier : b
-bison : bool_expr boro: 0
-bison : bool_expr boro: 1
-bison : bool_expr ebong: 0
-bison : bool_expr na: 1
-Block Completed
-lex : Found if
+bool_expr boro: 1
+Block Successfully Parsed
+bool_expr choto: 0
+Block Successfully Parsed
+Expression in else if is : trueBlock Successfully Parsed
 Expression in if is true
-bison : bool_expr boro: 1
-Block Completed
-Block Completed
-Expression in if is true
-lex : Found if
-bison : bool_expr boro: 1
-Block Completed
-bison : bool_expr choto: 0
-Block Completed
-expression in else if is : 0
-Block Completed
-
-Value of expression IF : 1
-Entering IF
-lex : Found if
-bison : bool_expr boro: 1
-lex : Found if
-lex : Found Identifier : a
-bison : bool_expr choto: 0
-Block Completed
-Block Completed
+bool_expr boro: 1
+bool_expr choto: 0
+Block Successfully Parsed
+Block Successfully Parsed
 Expression in if is false
-Entering Else
-Block Completed
-Block Completed
+Block Successfully Parsed
+Block Successfully Parsed
 Expression in if is true
-lex : Found Identifier : a
-lex : Found Identifier : b
-value of expression: 43.1
-lex : Found Identifier : a
-lex : Found Identifier : b
-value of expression: 22.9
-lex : Found Identifier : a
-lex : Found Identifier : b
-value of expression: 333.3
-lex : Found Identifier : a
-lex : Found Identifier : b
-value of expression: 3.267326733
-lex : Found Identifier : a
-lex : Found Identifier : b
-To the power value 2.172655117e+15
-value of expression: 2.172655117e+15
-lex : Found Identifier : a
- sin value 0.5446401646
-value of expression: 0.5446401646
-lex : Found Identifier : a
- cos value 0.8386698344
-value of expression: 0.8386698344
-lex : Found Identifier : a
- tan value 0.649409508
-value of expression: 0.649409508
-lex : Found Identifier : a
- ln value 3.496507561
-value of expression: 3.496507561
-lex : Found Identifier : pachta
-Registered new variable-> pachta : 0.000000
-lex : Found Identifier : i
-lex : Found Identifier : pachta
-Updated variable-> pachta : 5	
-Block Completed
+Value of expression: 43.1
+Value of expression: 22.9
+Value of expression: 333.3
+Value of expression: 3.267326733
+To the power value 2.172655117e+15
+Value of expression: 2.172655117e+15
+ sin value 0.5446401646
+Value of expression: 0.5446401646
+ cos value 0.8386698344
+Value of expression: 0.8386698344
+ tan value 0.649409508
+Value of expression: 0.649409508
+ ln value 3.496507561
+Value of expression: 3.496507561
+Declared variable-> pachta : 0.000000
+Updated variable-> pachta : 5
+Block Successfully Parsed
 FOR : value of i : 10
 FOR : value of i : 11
 FOR : value of i : 12
@@ -100,21 +59,18 @@ FOR : value of i : 16
 FOR : value of i : 17
 FOR : value of i : 18
 FOR : value of i : 19
-lex : Found Identifier : a
-Updated variable-> a : 6	
-lex : Found Identifier : a
-lex : Found Identifier : def
-Already Declared!
-Block Completed
+Updated variable-> a : 6
+Declared variable-> xyz : 10
+Block Successfully Parsed
 Case 5 is done
-lex : Found if
-lex : Found Identifier : def
-lex : Found Identifier : abc
-bison : bool_expr boro: 0
-lex : Found Identifier : ghi
-Registered new variable-> ghi : 15.000000
-Block Completed
+bool_expr boro: 0
+Declared variable-> ghi : 15
+Block Successfully Parsed
 Expression in if is false
-Block Completed
+Block Successfully Parsed
 Case 6 is done
-Successful Switch Statement
+Successful Switch Statement with 
+	variable a
+	case : 6
+Already Declared variable : abc !
+Variable cba not declared!

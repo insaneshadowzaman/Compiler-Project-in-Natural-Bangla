@@ -21,10 +21,6 @@
 	#define pi  3.1416
 	#include<stdlib.h>
 	#include<string.h>
-			// printf("\n\n\n\nDEBUG\n");
-			// printf("%d\n", 10);
-			// printf("DEBUG\n\n\n\n\n");
-	
 %}
 
 %union {
@@ -38,6 +34,7 @@
 %type  <DOB>  expression 
 %type  <DOB>  subsent
 %type  <IN>  bool_expr
+%type  <IN>  Variables
 %token  <id>  FUNCTION
 
 %token AR LP RP AND OR NOT HOLE DIE ELSE_IF START_BLOCK THAN ASSIGN END_BLOCK Var BOOL_EXPR_CLOSE JODI NAHOY Main End INT FLOAT SUM SUB MUL DIV FOR WHILE DO ISLESS ISGREATER ISGREATEREQU ISLESSEQU shesh SINE COS TAN LN FACTORIAL TOTHEPOWER Switch Case1 Case2 Case3
@@ -63,20 +60,20 @@ ghosona: Variable ASSIGN TYPE shesh	{
 		ids *a = checkId($1);
 		if(a == NULL) {
 			ids *x = makeId($1, 1, 0);
-			printf("Registered new variable-> %s : %lf\n", x->name, x->val);
+			printf("Declared variable-> %s : %lf\n", x->name, x->val);
 		}
 		else {
-			printf("Already Declared!\n");
+			printf("Already Declared variable : %s !\n", $1);
 		}
 	}
 	| Variable ASSIGN TYPE expression shesh {
 		ids *a = checkId($1);
 		if(a == NULL) {
 			ids *x = makeId($1, 1, $4);
-			printf("Registered new variable-> %s : %lf\n", x->name, x->val);
+			printf("Declared variable-> %s : %.10g\n", x->name, x->val);
 		}
 		else {
-			printf("Already Declared!\n");
+			printf("Already Declared variable : %s !\n", $1);
 		}
 	}
 	;
@@ -94,17 +91,16 @@ subsent: shesh {
 		if(a) {
 			a->val = $3;
 			$$ = $3;
+			printf("Updated variable-> %s : %.10g\n", $1, $3);
 		}
 		else {
-			printf("Variable %s not declared!", $1);
-			yyerror("Syntax error!\n");
+			printf("Variable %s not declared!\n", $1);
 		}
-		printf("Updated variable-> %s : %.10g\t\n", $1, $3);
 	}
 
 	| expression shesh { 
 		$$ = $1; 
-		printf("value of expression: %.10g\n", $1); 
+		printf("Value of expression: %.10g\n", $1); 
 	}
 	
 
@@ -126,18 +122,17 @@ subsent: shesh {
 									}
 									else
 									{
-										printf("Expression in if is false\nEntering Else\n");
+										printf("Expression in if is false\n");
 									}
 								   }
 
 
 	| JODI bool_expr BOOL_EXPR_CLOSE STMNT_BLOCK ELSE_IF_BLOCK NAHOY STMNT_BLOCK {
-		printf("\nValue of expression IF : %d\n", $2);
 		if($2) {
-			printf("Entering IF\n");
+			printf("Expression in if is true\n");
 		}
 		else {
-			printf("Entering ELSE\n");
+			printf("Expression in if is false\n");
 
 		}
 	}
@@ -160,16 +155,22 @@ subsent: shesh {
 	}
 	
 	| Switch Variable Cases END_BLOCK {
-		printf("Successful Switch Statement\n");
+		ids *a = checkId($2);
+		if(a) {
+			printf("Successful Switch Statement with \n\tvariable %s\n\tcase : %d\n", $2, (int)(a->val));
+		}
+		else {
+			printf("Variable %s not declared!\n", $2);
+		}
 	}
 	
 	| Variables FUNCTION STMNT_BLOCK {
-		printf("Successful created function: %s\n", $2);
+		printf("Successfully created function : %s with %d variables\n", $2, $1);
 	}
 
 	;
-Variables: Variable { }
-	| Variable AR Variables { }
+Variables: Variable { $$ = 1; }
+	| Variable AR Variables { $$ = 1 + $3; }
 
 Cases: /*empty*/
 	| Case Cases { }
@@ -182,14 +183,17 @@ Case: Number HOLE STMNT_BLOCK {
 
 ELSE_IF_BLOCK:  /* NULL */
 	| ELSE_IF bool_expr BOOL_EXPR_CLOSE STMNT_BLOCK ELSE_IF_BLOCK {
-		printf("expression in else if is : %d\n", $2);
 		if($2) {
-			printf("Entering else if\n");
+			printf("Expression in else if is : true");
+		}
+		else {
+			printf("Expression in else if is : true");
+
 		}
 }
 
 STMNT_BLOCK: START_BLOCK sentence END_BLOCK {
-	printf("Block Completed\n");
+	printf("Block Successfully Parsed\n");
  }
 
 expression: Number		{ $$ = $1; 	}
@@ -243,34 +247,34 @@ expression: Number		{ $$ = $1; 	}
         ;
 bool_expr: expression THAN expression ISLESS {
 	$$ = $1 > $3;
-	printf("bison : bool_expr choto: %d\n", $$);
+	printf("bool_expr choto: %d\n", $$);
 }
 	| expression THAN expression ISGREATER {
 	$$ = $1 < $3;
-	printf("bison : bool_expr boro: %d\n", $$);
+	printf("bool_expr boro: %d\n", $$);
 }
 	| expression THAN expression ISGREATEREQU {
 	$$ = $1 <= $3;
-	printf("bison : bool_expr shoman_boro: %d\n", $$);
+	printf("bool_expr shoman_boro: %d\n", $$);
 }
 	| expression THAN expression ISLESSEQU {
 	$$ = $1 >= $3;
-	printf("bison : bool_expr shoman_choto: %d\n", $$);
+	printf("bool_expr shoman_choto: %d\n", $$);
 }
 	| bool_expr AND bool_expr {
 		$$ = $1 && $3;
-	printf("bison : bool_expr ebong: %d\n", $$);
+	printf("bool_expr ebong: %d\n", $$);
 	}
 	| bool_expr OR bool_expr {
 		$$ = $1 && $3;
-	printf("bison : bool_expr othoba: %d\n", $$);
+	printf("bool_expr othoba: %d\n", $$);
 	}
 	| bool_expr NOT {
 		$$ = !($1);
-	printf("bison : bool_expr na: %d\n", $$);
+	printf("bool_expr na: %d\n", $$);
 	}
 	| LP bool_expr RP { $$ = $2;
-			printf("bison : bool_expr bracket: %d\n", $$);
+			printf("bool_expr bracket: %d\n", $$);
 	}
 
 %%

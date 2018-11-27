@@ -70,7 +70,9 @@ DIGIT [0-9]
 	return START_BLOCK;
 }
 
-"jodi"      { printf("lex : Found if\n"); return JODI; }
+"jodi"      { 
+	// printf("lex : Found if\n"); 
+	return JODI; }
 
 "nahole"    { return NAHOY; }
 
@@ -117,7 +119,7 @@ DIGIT [0-9]
 			p=(char *) calloc(strlen(yytext)+1, sizeof(char));
 			strcpy(p,yytext);
 			yylval.id = p;
-			printf("lex : Found Identifier : %s\n", yytext);
+			// printf("lex : Found Identifier : %s\n", yytext);
 			return Variable;
 		}
 
