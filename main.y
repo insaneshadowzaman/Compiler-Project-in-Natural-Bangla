@@ -37,7 +37,7 @@
 %type  <IN>  Variables
 %token  <id>  FUNCTION
 
-%token AR LP RP AND OR NOT HOLE DIE ELSE_IF START_BLOCK THAN ASSIGN END_BLOCK Var BOOL_EXPR_CLOSE JODI NAHOY Main End INT FLOAT SUM SUB MUL DIV FOR WHILE DO ISLESS ISGREATER ISGREATEREQU ISLESSEQU shesh SINE COS TAN LN FACTORIAL TOTHEPOWER Switch Case1 Case2 Case3
+%token BACK AR LP RP AND OR NOT HOLE DIE ELSE_IF START_BLOCK THAN ASSIGN END_BLOCK Var BOOL_EXPR_CLOSE JODI NAHOY Main End INT FLOAT SUM SUB MUL DIV FOR WHILE DO ISLESS ISGREATER ISGREATEREQU ISLESSEQU shesh SINE COS TAN LN FACTORIAL TOTHEPOWER Switch Case1 Case2 Case3
 %nonassoc IFX
 %nonassoc ELSE
 %nonassoc ASSIGN
@@ -164,11 +164,18 @@ subsent: shesh {
 		}
 	}
 	
-	| Variables FUNCTION STMNT_BLOCK {
+	| Variables FUNCTION FUNC_BLOCK {
+		// printf("\n\n\n\n%s\n\n\n", $2);
 		printf("Successfully created function : %s with %d variables\n", $2, $1);
 	}
 
 	;
+FUNC_BLOCK: START_BLOCK sentence RET_STMNT END_BLOCK {
+}
+	;
+RET_STMNT: BACK expression shesh {
+}
+
 Variables: Variable { $$ = 1; }
 	| Variable AR Variables { $$ = 1 + $3; }
 
@@ -205,6 +212,7 @@ expression: Number		{ $$ = $1; 	}
 			$$ = a->val;
 		}
 		else {
+			$$ = 0;
 			printf("Variable not declared!\n");
 		}
 	}

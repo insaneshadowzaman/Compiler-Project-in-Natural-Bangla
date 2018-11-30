@@ -103,6 +103,11 @@ dhori a
   shesh
 shesh
 
+// Functions definitions
+a ar b er_jogfol
+tahole
+    ferot a jog b #
+shesh
 
 // And now the error part
 

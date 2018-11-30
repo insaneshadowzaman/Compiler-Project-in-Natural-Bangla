@@ -72,5 +72,18 @@ Case 6 is done
 Successful Switch Statement with 
 	variable a
 	case : 6
-Already Declared variable : abc !
+Successfully created function : er_jogfol with 2 variables
+Already Declared variable : abc !
 Variable cba not declared!
+
+
+Total Keywords is : 50
+Total Function_calls is : 0
+Total Identifiers is : 44
+Total Operators is : 37
+Total Integers is : 25
+Total Floats is : 1
+Total Spaces is : 254
+Total Newlines is : 0
+Total Punctuations is : 52
+Total comments is : 27
