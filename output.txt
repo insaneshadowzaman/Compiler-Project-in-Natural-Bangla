@@ -78,12 +78,11 @@ Case 6 is done
 
 
 Total Keywords is : 50
-Total Function_calls is : 0
-Total Identifiers is : 44
+Total Function_calls is : 1
+Total Identifiers is : 43
 Total Operators is : 37
 Total Integers is : 25
 Total Floats is : 1
 Total Spaces is : 254
-Total Newlines is : 0
 Total Punctuations is : 52
 Total comments is : 27

@@ -201,7 +201,6 @@ int main()
     printf("Total Integers is : %d\n", ints);
     printf("Total Floats is : %d\n", floats);
     printf("Total Spaces is : %d\n", sp);
-    printf("Total Newlines is : %d\n", newline);
     printf("Total Punctuations is : %d\n", punc);
     printf("Total comments is : %d\n", cmnts);
 }

@@ -33,6 +33,7 @@ struct valueid {
 ```
 
 ## Rules for syntax analysis
+```
 sentence -> sentence ghoshona
 		|	sentence subsent
 ghoshona -> Variable ASSIGN TYPE shesh
@@ -72,6 +73,7 @@ bool_expr-> expression THAN expression ISLESS
         |	bool_expr OR bool_expr
         |	bool_expr NOT
         |	LP bool_expr RP
+```
 
 ## Sample input
 ```Bangla
